@@ -1,0 +1,97 @@
+#Global package Instalation
+
+    npm install -g [typscript]
+
+
+#Local Package Instalation
+
+    npm install [axios]
+
+#Temparary Package Instalation
+
+    npm nodemon
+
+========================================
+
+    npm creat-vite @latest
+
+* How to install next js
+    -> npm create-next-app@latest  
+====================================
+*installation Byginer
+
+    ->npm create-vite@latest
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned-scope CurrentUser  -->Error aya to  
+    
+
+*Instalation -Intermediate
+     
+     ->npm create-vite@latest .
+
+*Instalation Advnal
+
+    ->npm create-vite@latest .  __template react
+
+
+
+node_Modules
+1) This is a folder automatically created when you can run npm install (or yarn install/pnpm install).
+2)It contains all the Installed dependencles (packages) your project needs. including React,Vite,ESline,and Third-party librarles.
+3) Important : Never edit files inside it manually.and do not commit it to git
+4)Public:- Folder for static files(Like images,favicon)that are served as-is.
+5).gitignore:--> File that tells git which files /folder ignore(eg.node_modules).
+
+Q. What is eslint.config.js?
+`                             eslint.config.js is the configuration file for ESLine-a popular tool that analyzes your java script/Tyscript code for error..........
+
+ ****=>eslint.config.js tells ESLine how to check your code and what rules to follow.
+
+ 1.package.json
+ It acts like the identity card of your project.
+
+ Q.What is contains:
+    Project name,version,description.
+
+
+2.Package-lock.json
+It is an auto-generated fill created by npm.
+It records the exact version of every package and sub-pakckage installed.
+Why it exists.
+To ensure everyone on the team gets the sane exatct versions of packages.
+
+3.README.md
+A markdown file that servers as the documentation for project.
+Configuration fill for vite(build tool& dev server).
+
+Q2. what is component in react ? types of component?
+A component in react is a reusable(self-contained) piece of code that returns
+ some piece of jsx.
+
+ It is two types 
+1.class Besed component(CBC)
+ i).A class component is a JS class that extends React.compound.
+ ii).it has render () ti return JSX.
+ iii).it has the traditional and most popular way of writing React component before 2019.
+2.Function based components(FBC)
+
+
+
+
+Q3. what is JSX? what are the rules to write JSX?
+
+Q4. What is fragment  ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
