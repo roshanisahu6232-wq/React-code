@@ -191,18 +191,117 @@ Component call Without passing props:
   ```
 
 
+
 ## 12. What is render prop?
- 1. Render Prop is when you pass a function as a prop to a component, and that component calls the function to render something.
 
- #### Example
- ```
-      // Component accepts a function as a prop
-      function Greet({ render }) {
-        return <div>{render("Alice")}</div>; // calls the function
-      }
+1.  Render Prop is when you pass a function as a prop to a component, and that component calls the function to render something.
 
-      // Passing a function as a prop
-      <Greet render={(name) => <h1>Hello, {name}!</h1>} />
+#### Example
 
-      // Output → Hello, Alice!
- ```
+```
+     // Component accepts a function as a prop
+     function Greet({ render }) {
+       return <div>{render("Alice")}</div>; // calls the function
+     }
+
+     // Passing a function as a prop
+     <Greet render={(name) => <h1>Hello, {name}!</h1>} />
+
+     // Output → Hello, Alice!
+```
+
+## 13. what is Synthetic event in React?
+
+1. A synthetic event in React is a cross-browser wrapper around the browser's native event object.
+2. React normalizes events so they behave identically across all browsers.
+3. Instead of getting a raw MouseEvent or KeyboardEvent from the DOM, you get a SyntheticEvent object that has the same interface (preventDefault(), stopPropagation(), target, currentTarget, etc.) but works consistently everywhere.
+
+## 14. What is Virtual Dom?
+
+1. The Virtual DOM (VDOM) is a lightweight, in-memory JavaScript representation (a tree of JavaScript objects) of the Real DOM.
+2. Instead of updating the Real DOM every time something changes, React maintains a virtual copy of it in memory.
+3. React uses it to create a new tree on every re-render and then compares it with the previous one to optimize DOM updates.
+
+## 15. What is Reconcilliation?
+
+Reconciliation is the process React uses to figure out how to efficiently update the DOM (Document Object Model) when changes occur in the UI
+
+## 16. What is Diffing Algorithm?
+
+Diffing Algorithm is React’s heuristic-based[ o(n) ] comparison algorithm that efficiently finds differences between the new and old Virtual DOM trees.
+
+# 17. What is Render Phase?
+
+The Render Phase is the first phase of React’s reconciliation process. During this phase, React invokes the component functions (or render() method in class components), creates a new Virtual DOM tree, and performs diffing to determine the minimal set of changes needed to update the UI.
+
+- It is pure and side-effect free.
+- React may pause, abort, or restart this phase multiple times (due to concurrent rendering in React 18+).
+- No DOM mutations or side effects should occur here.
+
+# 18. What is Commit Phase?
+
+The Commit Phase is the second and final phase of React’s reconciliation process. In this phase, React applies the calculated changes (mutations) to the real DOM in a single, synchronous batch.
+
+- It runs after the Render Phase is completed.
+- Side effects are executed here:
+  - useLayoutEffect() (before browser paint)
+  - useEffect() (after browser paint)
+
+# 19. what is State?
+  - State in React is an internal, mutable data structure that represents the dynamic data of a component.
+  - whenever state variable changes react will re-render the component.
+
+# 20. Difference between state and props?
+
+### props
+1. Props are Immutable
+2. Props are used for passing data from one component to another component.
+3. Props are owned and controlled by the parent component.
+4. The child component only receives and consumes them.
+
+### state
+1. State is Mutable
+2. State is internal to the component.
+3. The component that declares it can directly read or update it.
+4. State Update Triggers Re-render
+
+
+# 21. What is Hooks?
+- Hooks are special built-in functions in React that allow you to use state and other React features (like lifecycle methods, context, refs, etc.) in functional components.
+
+#### Features
+- Hooks introduced in React 16.8 
+- Hooks allow Functional Components to be Stateful
+- Hooks Start with "use"
+- Enable Better Code Reuse
+
+
+# 22. What is useState Hook?
+1. "useState is a built-in React Hook that allows you to add and manage local state in functional components. 
+2. It returns an array with two elements: the current state value and a function to update that state."
+#### syntax
+```
+const [state, setState] = useState(initialValue);
+```
+- state → Current value of the state (read-only)
+- setState → Function used to update the state
+- initialValue → Initial value of the state (can be number, string, boolean, object, array, etc.)
+
+# 23. What is Batching?
+- Batching in React is the process where React groups multiple state updates into a single re-render instead of re-rendering the component after every individual state update. 
+- This improves performance by reducing unnecessary re-renders.
+
+# 24. what is conditional Rendering?
+- Conditional Rendering in React is the technique of rendering different UI elements or components based on certain conditions.
+- Here we use if-else, ternary operator and logical operator(short circuit operator).
+
+# 25. can we write function as an initial value in useState(fn) Lazy Initialization?
+- "Lazy Initialization in useState is a technique where we pass a function as the initial value to useState. React calls this function only once during the initial render of the component and uses its return value as the initial state.
+- This is useful for expensive computations that should not run on every re-render."
+#### syntax
+```
+const [state, setState] = useState(() => {
+  // This function runs ONLY ONCE during initial render
+  return expensiveComputation();
+});
+```

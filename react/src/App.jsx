@@ -9,7 +9,9 @@ import React from "react";
 // import Parent from "./Topic-7 React state variable/counter";
 // import Parent from "./Topic-8 Conditional Rendering/Home";
 // import Parent from "./Topic-9 conditional Rendering/Toggle";
-import Parent from "./Topic-10 Lazy Initialization/Counter"
+// import Parent from "./Topic-10 Lazy Initialization/Counter";
+// import Parent from "./Topic-11 useEffect Hook/Toggle";
+import Parent from "./Topic-12 useEffect Realword/Shop";
 
 function App() {
   return (
