@@ -1,24 +1,19 @@
-import React from "react";
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import Header from './Topic-14 React Routing/components/Header'
 
-// import Card from "./Topic-1 Rules of JSX/Card";
-// import Parent from "./Topic-2 Props/ParentCard";
-// import  Parent from "./Topic-3 Immutable Props/ParentCard";
-// import parent from "./Topic-4  map and fu/Parent";
-// import Parent from "./Topic-4 Children Props/Parent";
-// import Parent from "./Topic-4 render props/Child";
-// import Parent from "./Topic-7 React state variable/counter";
-// import Parent from "./Topic-8 Conditional Rendering/Home";
-// import Parent from "./Topic-9 conditional Rendering/Toggle";
-// import Parent from "./Topic-10 Lazy Initialization/Counter";
-// import Parent from "./Topic-11 useEffect Hook/Toggle";
-import Parent from "./Topic-12 useEffect Realword/Shop";
 
-function App() {
+const App = () => {
+
+  const user={username: "chombu", job: "Fullstack Dev"}
+
   return (
-    <>
-      <Parent/>
-    </>
-  );
-};
+    <div id="app">
+      <Header />
+
+      <Outlet context={user} />
+    </div>
+  )
+}
 
 export default App;
